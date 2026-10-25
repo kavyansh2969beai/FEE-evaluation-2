@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+/* =========================================================
+   THEME 1: LIGHT THEME (DEFAULT DESKTOP DESIGN)
+   ========================================================= */
+:root,
+[data-theme="light"] {
+  --bg-main: #f4f6fb;
+  --bg-pattern: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.06) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.06) 0px, transparent 50%);
+  --bg-surface: #ffffff;
+  --bg-elevated: #f8fafc;
+  --bg-subtle: #eef2ff;
+  --bg-input: #f8fafc;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --border-light: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-ink: #0f172a;
+
+  /* Signature Desktop Hero Banner (Matches Screenshot 123432) */
+  --hero-banner-bg: linear-gradient(135deg, #bae6fd 0%, #e0f2fe 55%, #ecfccb 100%);
+  --hero-banner-border: #0f172a;
+  --hero-banner-shadow: 0 8px 0 #0f172a;
+  --hero-badge-bg: #0f172a;
+  --hero-badge-text: #bef264;
+  --hero-title-color: #0f172a;
+  --hero-sub-color: #334155;
+
+  /* Navbar & Menus */
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --nav-border: #e2e8f0;
+  --nav-pill-bg: #f1f5f9;
+  --nav-link-color: #475569;
+  --nav-active-bg: #0f172a;
+  --nav-active-text: #ffffff;
+
+  /* Chat & Messaging Surfaces */
+  --chat-rail-bg: #0f172a;
+  --chat-sidebar-bg: #ffffff;
+  --chat-canvas-bg: #f1f5f9;
+  --chat-header-bg: #ffffff;
+  --chat-item-hover: #f8fafc;
+  --chat-item-active: #eef2ff;
+  --chat-outgoing-bg: #334155;
+  --chat-outgoing-text: #ffffff;
+  --chat-incoming-bg: #fde047;
+  --chat-incoming-text: #0f172a;
+
+  /* Accents & Shadows */
+  --brand-primary: #4f46e5;
+  --brand-primary-hover: #4338ca;
+  --brand-secondary: #0ea5e9;
+  --brand-emerald: #10b981;
+  --brand-amber: #f59e0b;
+  --brand-rose: #e11d48;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 20px 40px -12px rgba(15, 23, 42, 0.12);
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+}
+
+/* =========================================================
+   THEME 2: DARK THEME (ORIGINAL CHAT, NOTES & LOGIN DESIGN)
+   ========================================================= */
+[data-theme="dark"] {
+  --bg-main: #0c0c0c;
+  --bg-pattern: radial-gradient(#2a2a2e 1.25px, transparent 1.25px);
+  --bg-surface: #141414;
+  --bg-elevated: #18181b;
+  --bg-subtle: #1f1f23;
+  --bg-input: #18181b;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #d4d4d8;
+  --text-muted: #a1a1aa;
+
+  --border-light: #27272a;
+  --border-strong: #3f3f46;
+  --border-ink: #f59e0b;
+
+  /* Dark Theme Hero Banner */
+  --hero-banner-bg: linear-gradient(135deg, #141414 0%, #18181b 55%, #1e1b4b 100%);
+  --hero-banner-border: #3f3f46;
+  --hero-banner-shadow: 0 8px 0 #000000;
+  --hero-badge-bg: rgba(245, 158, 11, 0.16);
+  --hero-badge-text: #fde047;
+  --hero-title-color: #ffffff;
+  --hero-sub-color: #cbd5e1;
+
+  /* Navbar & Menus */
+  --nav-bg: rgba(15, 15, 18, 0.94);
+  --nav-border: #27272a;
+  --nav-pill-bg: #18181b;
+  --nav-link-color: #d4d4d8;
+  --nav-active-bg: #f59e0b;
+  --nav-active-text: #0f172a;
+
+  /* Chat & Messaging Surfaces */
+  --chat-rail-bg: #111113;
+  --chat-sidebar-bg: #141414;
+  --chat-canvas-bg: #0c0c0c;
+  --chat-header-bg: #141414;
+  --chat-item-hover: #18181b;
+  --chat-item-active: #222226;
+  --chat-outgoing-bg: #27272a;
+  --chat-outgoing-text: #f8fafc;
+  --chat-incoming-bg: #fde047;
+  --chat-incoming-text: #0f172a;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 12px 28px -4px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.65);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  background-image: var(--bg-pattern);
+  background-size: 24px 24px;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+[data-theme="light"] body {
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+/* Clean, Professional Headings (Replaces Cyberpunk Font) */
+h1, h2, h3, h4, .jakarta-heading {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.mindora-hero-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--hero-title-color);
+}
+
+.mono-font {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Unified Hero Banner Component */
+.mindora-hero-banner {
+  background: var(--hero-banner-bg);
+  border-radius: 22px;
+  padding: 2rem 2.25rem;
+  border: 2px solid var(--hero-banner-border);
+  box-shadow: var(--hero-banner-shadow);
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+/* Theme-Aware Dotted Surface (Auth, Notes, Chat) */
+.auth-dotted-bg {
+  background-color: var(--bg-main);
+  background-image: var(--bg-pattern);
+  background-size: 24px 24px;
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .auth-dotted-bg {
+  background-image: radial-gradient(#cbd5e1 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+}
+
+/* Unified Inputs */
+.mindora-input,
+.auth-dark-input {
+  width: 100%;
+  padding: 0.72rem 1rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-strong);
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.mindora-input::placeholder,
+.auth-dark-input::placeholder {
+  color: var(--text-muted);
+}
+
+.mindora-input:focus,
+.auth-dark-input:focus {
+  background-color: var(--bg-surface);
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.16);
+}
+
+/* Unified Surface Cards */
+.mindora-card {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  color: var(--text-primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.mindora-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+/* Primary Pill Buttons */
+.pink-pill-btn {
+  background: linear-gradient(135deg, #ff2e7e 0%, #e11d48 100%);
+  color: #ffffff;
+  border: 2px solid #0f172a;
+  border-radius: 999px;
+  padding: 0.75rem 1.65rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.3);
+}
+
+.pink-pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(225, 29, 72, 0.42);
+}
+
+.indigo-pill-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.65rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.3);
+}
+
+.indigo-pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.42);
+}
+
+/* =========================================================
+   DIGITAL NOTEBOOK PAPER TEXTURES & EDITOR STYLES
+   ========================================================= */
+.notebook-paper-sheet {
+  position: relative;
+  border-radius: 14px;
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.18),
+    0 0 0 1.5px var(--border-strong),
+    inset 0 0 32px rgba(180, 160, 120, 0.08);
+  transition: background-color 0.25s ease;
+}
+
+.paper-style-lined {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 31px,
+    rgba(100, 116, 139, 0.22) 31px,
+    rgba(100, 116, 139, 0.22) 32px
+  );
+  background-attachment: local;
+  line-height: 32px !important;
+}
+
+.paper-style-grid {
+  background-image:
+    linear-gradient(to right, rgba(100, 116, 139, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(100, 116, 139, 0.16) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: local;
+  line-height: 24px !important;
+}
+
+.paper-style-dotted {
+  background-image: radial-gradient(rgba(100, 116, 139, 0.34) 1.35px, transparent 1.35px);
+  background-size: 24px 24px;
+  background-attachment: local;
+  line-height: 28px !important;
+}
+
+.paper-style-plain {
+  background-image: none;
+  line-height: 1.75 !important;
+}
+
+.notebook-editable-area {
+  outline: none;
+  min-height: 520px;
+  word-break: break-word;
+}
+
+.notebook-editable-area:empty:before {
+  content: attr(data-placeholder);
+  color: rgba(100, 116, 139, 0.55);
+  pointer-events: none;
+  font-style: italic;
+}
+
+/* =========================================================
+   ENVIRONMENTAL & UI ANIMATIONS
+   ========================================================= */
+@keyframes birdSoarA {
+  0%, 100% { transform: translate(0px, 0px) rotate(-2deg) scale(1); }
+  50% { transform: translate(24px, -14px) rotate(3deg) scale(1.05); }
+}
+
+@keyframes birdSoarB {
+  0%, 100% { transform: translate(0px, 0px) rotate(2deg); }
+  50% { transform: translate(-20px, -12px) rotate(-4deg); }
+}
+
+@keyframes wingFlap {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.55); }
+}
+
+@keyframes owlLook {
+  0%, 40%, 100% { transform: rotate(0deg); }
+  50%, 65% { transform: rotate(8deg); }
+  75%, 85% { transform: rotate(-6deg); }
+}
+
+@keyframes foxTailWag {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes treeSway {
+  0%, 100% { transform: rotate(-1.2deg); }
+  50% { transform: rotate(1.5deg); }
+}
+
+@keyframes floatWidgetA {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatWidgetB {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fireflyGlow {
+  0%, 100% { opacity: 0.25; transform: scale(0.85) translateY(0px); }
+  50% { opacity: 0.95; transform: scale(1.25) translateY(-8px); }
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dropdownPop {
+  from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes floatToastIn {
+  from { opacity: 0; transform: translateX(30px) scale(0.96); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.bird-flock-a { animation: birdSoarA 7s ease-in-out infinite; }
+.bird-flock-b { animation: birdSoarB 8.5s ease-in-out infinite; }
+.wing-anim { animation: wingFlap 0.9s ease-in-out infinite; transform-origin: center; }
+.owl-anim { animation: owlLook 6s ease-in-out infinite; transform-origin: bottom center; }
+.fox-tail-anim { animation: foxTailWag 3.2s ease-in-out infinite; transform-origin: bottom left; }
+.tree-sway-anim { animation: treeSway 5s ease-in-out infinite; transform-origin: bottom center; }
+.firefly-anim { animation: fireflyGlow 3.5s ease-in-out infinite; }
+.account-dropdown-anim { animation: dropdownPop 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.floating-msg-toast { animation: floatToastIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.board-fade { animation: fadeInSlide 0.35s ease-out; }
+
+.float-widget-a {
+  animation: floatWidgetA 5.2s ease-in-out infinite;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.float-widget-b {
+  animation: floatWidgetB 6s ease-in-out infinite;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.float-widget-a:hover, .float-widget-b:hover {
+  animation-play-state: paused;
+  transform: translateY(-14px) scale(1.03) !important;
+  box-shadow: 0 20px 38px -6px rgba(15, 23, 42, 0.22) !important;
+  z-index: 30;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 900px) {
+  .responsive-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
